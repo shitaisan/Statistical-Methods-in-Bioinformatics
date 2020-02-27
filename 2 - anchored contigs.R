@@ -18,6 +18,7 @@ for (i in 1:300){
   for (k in 1:M){
     anchcont <- fragments[fragments <= anchpts[k] & fragments > anchpts[k]-500]
     if (length(intersect(anchcont, prev))==0)
+      # if there are no fragments in anchcont, anchleng will be numeric(0)
       anchleng <- c(anchleng, anchcont[length(anchcont)]+L-anchcont[1])
     else {
       anchcont <- union(prev, anchcont)
