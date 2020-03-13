@@ -20,13 +20,24 @@ for (k in 1:100){
   l <- length(all)
   motifnumb <- c(motifnumb, l)
   mean_dist_between_occur <- c(mean_dist_between_occur, 
-                         mean(all[2:l]-all[1:(l-1)]))
+                               mean(all[2:l]-all[1:(l-1)]))
 }
 #=========
 mean(motifnumb)
 probM <- sum(sapply(M, function(w) 
-                    prod(p[strsplit(w, split='')[[1]]])))
+  prod(p[strsplit(w, split='')[[1]]])))
 (N-k+1)*probM
 
 mean(mean_dist_between_occur)
 1/probM
+
+eps <- array(dim = c(m, m, k), dimnames = list(M, M, 1:k))
+for (u in M){
+  for (v in M){
+    begin <- substring(u, 1, 1:nchar(u))
+    end <- substring(v, nchar(v):1, nchar(v))
+    eps[u, v, ] <- begin==end
+  }
+}
+
+# NEXT !
