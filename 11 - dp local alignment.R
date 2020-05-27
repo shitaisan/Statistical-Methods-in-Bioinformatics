@@ -1,4 +1,3 @@
-```{r}
 rm(list=ls())
 word1 <- strsplit('-gaatct', split = '')[[1]]
 word2 <- strsplit('-catt', split = '')[[1]]
@@ -30,6 +29,3 @@ while (!is.na(arrays[i, j])){
   else if (arrays[i, j]=='up') i <- i-1
   else if (arrays[i, j]=='left') j <- j-1
 }
-
-```
-
