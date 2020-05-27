@@ -9,7 +9,6 @@ equal <- dna1==dna2
 names(equal) <- 1:N
 
 begin <- 1:(N-k)
-# im sorry...
 end <- sapply(begin, function(begin) 
                       as.numeric(names(which.max(cumsum(!equal[begin:N])>k))))
 end[is.na(end)] <- N
