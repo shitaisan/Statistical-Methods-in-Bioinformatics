@@ -1,4 +1,3 @@
-```{r}
 rm(list=ls())
 word1 <- strsplit('-gaatct', split = '')[[1]]
 word2 <- strsplit('-catt', split = '')[[1]]
@@ -24,5 +23,3 @@ for (i in 1:m)
     else if (two>=one & two>=three) {dp[i+1, j+1] <- two; arrays[i+1, j+1] <- 'up'}
     else {dp[i+1, j+1] <- three; arrays[i+1, j+1] <- 'left'}
   }
-```
-
